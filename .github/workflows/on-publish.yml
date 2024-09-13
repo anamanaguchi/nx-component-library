@@ -41,7 +41,7 @@ jobs:
         run: npm ci
 
       - name: Publish packages
-      - run: |
+        run: |
           git config --global user.email "some@user.dev"
           git config --global user.name "YourName"
           npx nx release publish --dry-run

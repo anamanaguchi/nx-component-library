@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the main branch
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         # Only a single commit is fetched by default
         # we need full repo history with tags, so we are setting fetch-depth: 0
         with:
@@ -29,24 +29,24 @@ jobs:
           token: secrets.PAT
 
       - name: Setup node
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install packages
-      - run: npm ci
+        run: npm ci
 
       - name: Sets the base and head SHAs for the nx affected commands in CI
-      - uses: nrwl/nx-set-shas@v4
+        uses: nrwl/nx-set-shas@v4
 
       - name: Build affected libs
-      - run: npx nx affected -t build
+        run: npx nx affected -t build
 
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
-      - run: |
+        run: |
           git config --global user.email "some@user.dev"
           git config --global user.name "YourName"
           npx nx release --skip-publish
