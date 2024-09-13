@@ -14,7 +14,6 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "66e4917f51434f1c327ecbb6",
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
@@ -53,7 +52,33 @@
       },
       "library": {
         "style": "styled-components",
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
+      }
+    }
+  },
+  "release": {
+    "projectsRelationship": "independent",
+    "projects": [
+      "libs/*"
+    ],
+    "version": {
+      "conventionalCommits": true
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "file": false,
+        "createRelease": "github"
+      }
+    }
+  },
+  "targetDefaults": {
+    "nx-release-publish": {
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "packageRoot": "dist/libs/{projectName}"
       }
     }
   }
