@@ -45,7 +45,6 @@ jobs:
           git config --global user.email "some@user.dev"
           git config --global user.name "YourName"
           npx nx release publish --dry-run
-
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
           # We need to set provenance to true in order to generate provenance statement
