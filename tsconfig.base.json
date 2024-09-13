@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-component-library/footer": ["libs/footer/src/index.ts"],
+      "@nx-component-library/header": ["libs/header/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
