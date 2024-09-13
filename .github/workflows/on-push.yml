@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
           # We need to pass Personal Access Token in order
           # to force triggering on-publish workflow
-          token: secrets.PAT
+          token: ${{ secrets.PAT }}
 
       - name: Setup node
         uses: actions/setup-node@v3
