@@ -63,7 +63,7 @@
       "libs/*"
     ],
     "git": {
-      "commitMessage": "chore: updated version to: {version} [no ci]"
+      "commitMessage": "chore: updated version [no ci]"
     },
     "version": {
       "conventionalCommits": true
