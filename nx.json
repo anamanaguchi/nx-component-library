@@ -62,6 +62,9 @@
     "projects": [
       "libs/*"
     ],
+    "git": {
+      "commitMessage": "Updated version to: {version} [no cli]"
+    },
     "version": {
       "conventionalCommits": true
     },
